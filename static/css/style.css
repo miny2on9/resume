@@ -1,0 +1,302 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    color: #333;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+}
+li {
+    list-style: none;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+a:hover {
+    color: #535aac;
+    text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6 {
+    clip: rect(85px 450px 395px 45px);
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb { background: #ccc; }
+::-webkit-scrollbar-track { background: #eee; border-left: 1px solid #ddd;}
+
+
+/* ----------------------------------
+    Google material icons
+    - https://fonts.google.com/icons
+---------------------------------- */
+.material-icons { vertical-align: middle; }
+.material-icons.md-16 { font-size: 16px; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-20 { font-size: 20px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* layout */
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.header {
+    border-bottom: 1px solid  #ddd;
+}
+.header-inner {
+    width: 960px;
+    margin: 0 auto;
+}
+.container {
+    padding-bottom: 100px;
+    margin-top: 190px;
+}
+.contents {
+    width: 960px;
+    margin: 0 auto;
+}
+.scroll-top {
+    display: none;
+    position: fixed;
+    right: 100px;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 3px 10px 0px;
+    z-index: 2;
+}
+
+
+/* header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    padding: 20px 0 40px;
+
+}
+.header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.header h1 span:first-child {
+    position: relative;
+    color: #535aac;
+    padding-right: 25px;
+    margin-right: 15px;
+}
+.header h1 span:first-child:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    background: #666;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.header h1 span:last-child {
+    font-size: 24px;
+    font-weight: normal;
+}
+.header.scroll {
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    /* margin-top: -90px; */
+    border-bottom: 1px solid #ccc;
+}
+.header.scroll h1 {
+    font-size: 28px;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+.header.scroll h1 span:last-child {
+    font-size: 18px;
+}
+
+.header .nav-gnb {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto 0;
+}
+.header.scroll .nav-gnb {
+    margin: 20px auto 0;
+}
+.header .nav-gnb li a {
+    position: relative;
+    color: #999;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+.header .nav-gnb li a:hover,
+.header .nav-gnb li.is-active a {
+    color: #535aac;
+    text-decoration: none;
+}
+.header .nav li a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    opacity: 0;
+    border-bottom: 2px solid #535aac;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.header .nav li a:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+.header .nav li a:hover:after {
+    width: 100%;
+    opacity: 1;
+}
+.header .nav li.is-active a {
+    font-weight: bold;
+}
+.header .nav li.is-active a:after {
+    width: 100%;
+    opacity: 1;
+}
+
+
+/* contents */
+.section {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding: 80px 0;
+}
+.section:first-child {
+    border-top: 0;
+}
+.section h2 {
+    width: 250px;
+    color: #535aac;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.section h2 span {
+    position: relative;
+    display: block;
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.section h2 span:before {
+    content: '*';
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+.section .box {
+    width: calc(100% - 250px);
+}
+/* about me */
+.section .about {
+    display: flex;
+}
+.section .profile-img {
+    width: 150px;
+    margin-right: 80px;
+    vertical-align: top;
+}
+.section .profile-img img {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.section .about .profile-text {
+    width: calc(100% - 150px);
+}
+.section .about .profile-text strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.section .about .profile-text strong span {
+    color: #666;
+    font-size: 16px;
+}
+.section .about dl {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+.section .about dl dt {
+    width: 110px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.section .about dl dt i {
+    display: inline-block;
+    font-size: 22px;
+    margin-right: 10px;
+}
+.section .about dl dd {
+    width: calc(100% - 120px);
+    color: #333;
+    font-weight: 500;
+}
+
+
+.dot-list > li {
+    position: relative;
+    display: flex;
+    font-size: 20px;
+}
+.dot-list > li + li {
+    margin-top: 30px;
+}
+.dot-list > li strong {
+    width: 200px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+.dot-list li ul li {
+    font-size: 16px;
+    font-weight: normal;
+}
+.dot-list li ul li + li {
+    margin-top: 5px;
+}
+.dot-list li ul li:last-child {
+    color: #666;
+    font-size: 14px;
+}
+.dot-list li ul li.normal {
+    color: #333;
+    font-size: 16px;
+    margin-top: 0;
+}
